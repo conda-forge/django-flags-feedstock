@@ -3,7 +3,7 @@ schema_version: 1
 
 context:
   name: django-flags
-  version: "5.0.14"
+  version: "5.1.0"
 
 package:
   name: ${{ name|lower }}
@@ -11,10 +11,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
-  sha256: 4d29cc8892c23c9f58676804edccd8822a3fb34458e3ac36deb1cf499c80f55e
+  sha256: 47f33efba238fe83a2c1f6f5764147fe62d770039f64b3a039e0e461bbc36e79
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
