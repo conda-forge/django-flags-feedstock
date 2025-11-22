@@ -14,16 +14,17 @@ source:
   sha256: 47f33efba238fe83a2c1f6f5764147fe62d770039f64b3a039e0e461bbc36e79
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
     - python ${{ python_min }}.*
-    - setuptools
-    - wheel
+    - setuptools >=63
+    - setuptools-scm >=8
     - pip
+    #- wheel
   run:
     - python >=${{ python_min }},<4.0
     - django >=4.2
