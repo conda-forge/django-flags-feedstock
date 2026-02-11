@@ -3,7 +3,7 @@ schema_version: 1
 
 context:
   name: django-flags
-  version: "5.1.0"
+  version: 5.2.0
 
 package:
   name: ${{ name|lower }}
@@ -11,10 +11,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
-  sha256: 47f33efba238fe83a2c1f6f5764147fe62d770039f64b3a039e0e461bbc36e79
+  sha256: a3aee5e0d11e24e35f5ae4a423d52cad721f639181c1b1251e0148d8530a3f81
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
@@ -28,13 +28,8 @@ requirements:
   run:
     - python >=${{ python_min }},<4.0
     - django >=4.2
-    # - pymdown-extensions >=4.11
-    # - mkdocs-rtd-dropdown >=0.0.11
-    # - mkdocs >=0.17
-    # - jinja2
-    # - django-debug-toolbar
-    # - coverage
-
+    - jinja2
+    - django-debug-toolbar
 tests:
   - python:
       imports:
