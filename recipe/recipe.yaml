@@ -3,7 +3,7 @@ schema_version: 1
 
 context:
   name: django-flags
-  version: 5.2.0
+  version: 5.3.0
 
 package:
   name: ${{ name|lower }}
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
-  sha256: a3aee5e0d11e24e35f5ae4a423d52cad721f639181c1b1251e0148d8530a3f81
+  sha256: 4316ff362580b7f529ae9e82069c661d53d65238c4aa5c6a0183b3d3d4200847
 
 build:
   number: 0
@@ -28,8 +28,6 @@ requirements:
   run:
     - python >=${{ python_min }},<4.0
     - django >=4.2
-    - jinja2
-    - django-debug-toolbar
 tests:
   - python:
       imports:
